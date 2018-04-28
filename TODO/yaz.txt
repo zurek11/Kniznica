@@ -1,0 +1,24 @@
+yaz-client -m catalogue.dat
+
+open tcp:arl1.library.sk:8887
+
+base pim_un_cat
+
+find @attr 1=4 ano
+
+show 1+5
+
+yaz-marcdump -f MARC-8 -t UTF-8 -o marc -l 9=97 catalogue.dat >catalogue.utf8.dat
+yaz-marcdump -l 9=97 catalogue.dat >catalogue.utf8.dat
+
+**vedecká knihovna v Liberci**
+SERVER:		ipac.kvkli.cz
+PORT:		8887
+KODOVANIE:	M21UTF8
+KATALOG:	li_us_cat
+AUTORIZACIA:	li_us_auth
+
+sposob komunikacie podoba cez aku sa posielaju udaje vo formate
+z39.50 dopisat naco protokol budem vyuzivat
+popisat tagy ktore budem v bakalarke potrebovat 600vky ten 072 atd. na zber udajov.
+oai pmh naco sluzi a jeho ucel

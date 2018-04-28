@@ -1,0 +1,27 @@
+open tcp:arl1.library.sk:8887
+
+base pim_un_cat
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+open tcp:arl1.library.sk:8887
+base pim_un_cat
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+show 1+5
+show 1
+base pim_un_cat
+show 1+5
+show 1+5
+quit
+open arl1.library.sk:8887
+base pim_un_cat
+find @attr 1=4 ano
+show 1+5
+exit

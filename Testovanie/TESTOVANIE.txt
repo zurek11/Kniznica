@@ -1,0 +1,28 @@
+1. SUBJEKTY informácie o nich
+
+-subjekt 1
+meno: Oliver Vcelka
+vek: 6
+pohlavie: muž
+studium: škôlkar
+digitalne skusenosti: bohaté
+
+-subjekt 2
+meno: Júlia Žúrkova
+vek: 5
+pohlavie: žena
+studium: škôlkarka
+digitalne skusenosti: malé
+
+2. Vysvetlenie problemu 
+
+- poznate kniznice?
+- viete na co sluzia?
+- objasnit viziu mojho projektu
+
+3. Mock-up lepenie
+
+4. TESTOVANIE
+
+- otvorit sekciu knížky
+- prihlásenie

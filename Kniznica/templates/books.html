@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Knihy</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "styles/books.css" %}">
+    <script src="{% static "scripts/books.js" %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/detska-kniznica">
+                    <img class="logo" src="{% static "source/logo/main_logo.png" %}" alt="LOGO">
+                </a>
+            </div>
+            <ul class="nav navbar-right top-nav-links">
+               {% if not logged %}
+                <li id="login">
+                    <a href="/detska-kniznica/login" data-placement="bottom" data-toggle="tooltip" data-original-title="Prihlásenie">
+                        PRIHLÁSENIE
+                    </a>
+                </li>
+                <li id="register">
+                    <a href="/detska-kniznica/register" data-placement="bottom" data-toggle="tooltip" data-original-title="Registrácia">
+                        REGISTRÁCIA
+                    </a>
+                </li>
+                {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user_name }} <b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/detska-kniznica/login/logOut"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse upper-nav top-nav">
+                <ul class="nav navbar-nav side-nav">
+                    <li id="news">
+                        <a href="/detska-kniznica"><i class="glyphicon glyphicon-list-alt"></i> SPRÁVIČKY</a>
+                    </li>
+                    <li id="books">
+                        <a href="/detska-kniznica/books"><i class="glyphicon glyphicon-book"></i>  KNIHY</a>
+                    </li>
+                    <li id="games">
+                        <a href="/detska-kniznica/games"><i class="icon-games"></i>  HRY</a>
+                    </li>
+                    <li id="fairytales">
+                        <a href="#"><i class="glyphicon glyphicon-facetime-video"></i> ROZPRÁVKY</a>
+                    </li>
+                    <li id="songs">
+                        <a href="#"><i class="glyphicon glyphicon-music"></i> PESNIČKY</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid" style="padding-top: 20px">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 main-theme">
+                    <a href="/detska-kniznica/books/getBooks">DOSTAN KNIHY</a>
+                </div>
+                <div class="col-sm-6 col-md-6 main-theme">
+                    <a href="/detska-kniznica/books/showBooks">VYPIS KNIHY</a>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <hr>
+                 <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <ul id="footer_table">
+                            <li class="contact">E-mail: adamzurek14@gmial.com</li>
+                            <li class="contact">Tel. číslo: +421 915 485 478</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <ul id="footer_table">
+                            <li class="social"><a href="https://www.instagram.com/zurek5426/"><img border="0" alt="Instagram" src="{% static "source/icon/instagram_icon.png" %}" class="footer-image"></a></li>
+                            <li class="social"><a href="https://www.linkedin.com/in/adam-%C5%BE%C3%BArek-46a6a5156/"><img border="0" alt="LinkedIn" src="{% static "source/icon/linkedin_icon.png" %}" class="footer-image"></a></li>
+                            <li class="social"><a href="https://plus.google.com/u/0/116552911768238305257"><img border="0" alt="Google+" src="{% static "source/icon/google_icon.png" %}" class="footer-image"></a></li>
+                            <li class="social"><a href="https://www.facebook.com/adam.zurek.758"><img border="0" alt="Facebook" src="{% static "source/icon/facebook_icon.png" %}" class="footer-image"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <p class="contact" align="center">Copyright 2017 FIIT STU - All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

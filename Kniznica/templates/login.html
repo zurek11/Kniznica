@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prihlásenie</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "styles/login.css" %}">
+    <script src="{% static "scripts/login.js" %}"></script>
+</head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top top-nav" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/detska-kniznica">
+                        <img class="logo" src="{% static "source/logo/main_logo.png" %}" alt="LOGO">
+                    </a>
+                </div>
+                <ul class="nav navbar-right top-nav-links">
+                   <li id="login">
+                        <a href="/detska-kniznica" data-placement="bottom" data-toggle="tooltip" data-original-title="Prihlásenie">
+                            SPÄŤ
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div class="card card-container">
+                    <h3 hidden id="loading">Poprosíme chvíľku strpenia.</h3>
+                    <div hidden class="loader"></div>
+                    <img id="main-img" src="{% static "source/image/prihlasenie.png" %}"/>
+                    <form action="/detska-kniznica/login/logUser" method="post" novalidate>
+                        {% csrf_token %}
+                        <div id="name">
+                            {{ LogUser.username }}
+                            {% if LogUser.username.errors %}
+                                {% for error in LogUser.username.errors %}
+                                    <strong style="color: #b91436">{{ error }}</strong>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div id="password">
+                            {{ LogUser.password }}
+                            {% if LogUser.password.errors %}
+                                {% for error in LogUser.username.errors %}
+                                    <strong style="color: #b91436">{{ error }}</strong>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div hidden>
+                            {{ LogUser.pic1 }}
+                        </div>
+                        <div id="menu_camera">
+                            <button class="btn btn-lg btn-primary btn-block btn-signin blue-background white" type="button" id="btn_camera">Prihlásenie snímkou tváre</button>
+                        </div>
+                        <div hidden id="div_video">
+                            <video id="video" width="100%" autoplay></video>
+                        </div>
+                        <div hidden id="menu_login_camera">
+                            <button class="btn btn-lg btn-primary btn-block btn-signin blue-background white" type="submit" id="btn_login_camera" name="btn_login_camera">Snímka tváre</button>
+                        </div>
+                        <div id="menu_login">
+                            <button class="btn btn-lg btn-primary btn-block btn-signin blue-background white" type="submit" id="btn_login" name="btn_login">Prihlásenie</button>
+                        </div>
+                        <canvas hidden id="canvas" width="640" height="480"></canvas>
+                    </form>
+                </div>
+            </div>
+            <footer class="footer navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <hr>
+                     <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <ul id="footer_table">
+                                <li class="contact">E-mail: adamzurek14@gmial.com</li>
+                                <li class="contact">Tel. číslo: +421 915 485 478</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <ul id="footer_table">
+                                <li class="social"><a href="https://www.instagram.com/zurek5426/"><img border="0" alt="Instagram" src="{% static "source/icon/instagram_icon.png" %}" class="footer-image"></a></li>
+                                <li class="social"><a href="https://www.linkedin.com/in/adam-%C5%BE%C3%BArek-46a6a5156/"><img border="0" alt="LinkedIn" src="{% static "source/icon/linkedin_icon.png" %}" class="footer-image"></a></li>
+                                <li class="social"><a href="https://plus.google.com/u/0/116552911768238305257"><img border="0" alt="Google+" src="{% static "source/icon/google_icon.png" %}" class="footer-image"></a></li>
+                                <li class="social"><a href="https://www.facebook.com/adam.zurek.758"><img border="0" alt="Facebook" src="{% static "source/icon/facebook_icon.png" %}" class="footer-image"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <p class="contact" align="center">Copyright 2017 FIIT STU - All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

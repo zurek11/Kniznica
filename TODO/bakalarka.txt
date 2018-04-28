@@ -1,0 +1,7 @@
+1. dorobit zvukovu navigaciu prihlasenie registracia
+2. dorobit footer pridat maskota farby loremipsum do noviniek
+3. loading pri nacitavani prihlasenia za pomoci snimky 
+
+--------------------------------------------------------------------
+webkamera nefunguje na chrome z dovodu bezpecnosti bez https
+predpokladame ze kniznica mat certifikat bude

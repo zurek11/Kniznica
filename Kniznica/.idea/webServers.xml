@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="09fdf86b-ca0f-4989-8886-2037708a5546" name="Bakalarka Server" url="http://86.110.225.19/detska-kniznica">
+        <fileTransfer host="86.110.225.19" port="22443" privateKey="C:\Users\zurek\Documents\5. semester\bakalarka\Server\cosmo62d.ppk" rootFolder="/home/cosmo62d" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22443" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

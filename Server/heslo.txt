@@ -1,0 +1,22 @@
+Saq232966/htd
+
+adresa:  
+http://86.110.225.19/detska-kniznica/
+
+prikazy-docker:
+
+docker-compose up
+docker-compose up -d
+docker-compose down
+docker-compose run web python3 manage.py migrate
+docker-compose run web python3 manage.py makemigrations
+
+docker ps
+docker logs --follow djangodockerkniznica_web_1
+
+prikazy-sqlite3:
+
+sqlite3 - turn on sqlite3 commandline
+.databases - list of active databases
+.open "db" - open specific database
+.tables - list tables for specific database
