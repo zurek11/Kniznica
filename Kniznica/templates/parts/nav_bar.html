@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nav-bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static "styles/nav_bar.css" %}">
+    <link rel="stylesheet" href="{% static "styles/fonts.css" %}">
+
+    <script src="{% static "scripts/user_menu.js" %}"></script>
+    <script src="{% static "scripts/voice-navigation.js" %}"></script>
+    <script src="{% static "scripts/voice-recognition.js" %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/detska-kniznica">
+                <img class="logo" src="{% static "source/logo/main_logo.png" %}" alt="LOGO">
+            </a>
+        </div>
+        <ul class="nav navbar-right top-nav-links">
+           {% if not logged %}
+            <li id="login">
+                <a href="/detska-kniznica/login" data-placement="bottom" data-toggle="tooltip" data-original-title="Prihlásenie">
+                    PRIHLÁSENIE
+                </a>
+            </li>
+            <li id="register">
+                <a href="/detska-kniznica/register" data-placement="bottom" data-toggle="tooltip" data-original-title="Registrácia">
+                    REGISTRÁCIA
+                </a>
+            </li>
+            {% else %}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user_name }} <b class="fa fa-angle-down"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-book"></i> Výpožičky</a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart"></i> Štatistiky</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-cog"></i> Zmena hesla</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/detska-kniznica/login/logOut"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+            {% endif %}
+            <li>
+                <button id="sound" type="button" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-volume-up"></span>
+                </button>
+            </li>
+            <li>
+                <button id="voice" class="btn btn-primary btn-lg">
+                    <span class="fa fa-microphone"></span>
+                </button>
+            </li>
+        </ul>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse upper-nav top-nav">
+            <ul class="nav navbar-nav side-nav">
+                <li id="news">
+                    <a class="side-menu-text {% if request.get_full_path == "/detska-kniznica" %}focus{% endif %}" style="letter-spacing:0;" href="/detska-kniznica">
+                        <i style="color: rgb(255, 236, 0)" class="glyphicon glyphicon-list-alt"></i>
+                        <span style="padding-left:5px;font-size:130%;font-weight: bold;">
+                            <span style="color: rgb(157, 207, 238);">S</span>
+                            <span style="color: rgb(221, 158, 191);">P</span>
+                            <span style="color: rgb(241, 205, 82);">R</span>
+                            <span style="color: rgb(183, 202, 92);">Á</span>
+                            <span style="color: rgb(202, 83, 59);">V</span>
+                            <span style="color: rgb(142, 141, 189);">I</span>
+                            <span style="color: rgb(136, 192, 194);">Č</span>
+                            <span style="color: rgb(224, 159, 74);">K</span>
+                            <span style="color: rgb(202, 84, 127);">Y</span>
+                        </span>
+                    </a>
+                </li>
+                <li id="books">
+                    <a class="side-menu-text {% if request.get_full_path == "/detska-kniznica/books" %}focus{% endif %}" style="letter-spacing:0" href="/detska-kniznica/books">
+                        <i style="color: rgb(79, 129, 189)" class="glyphicon glyphicon-book"></i>
+                        <span style="padding-left:5px;font-size:130%;font-weight: bold;">
+                            <span style="color: rgb(157, 207, 238);">K</span>
+                            <span style="color: rgb(221, 158, 191);">N</span>
+                            <span style="color: rgb(241, 205, 82);">I</span>
+                            <span style="color: rgb(183, 202, 92);">H</span>
+                            <span style="color: rgb(202, 83, 59);">Y</span>
+                        </span>
+                    </a>
+                </li>
+                <li id="games">
+                    <a class="side-menu-text {% if request.get_full_path == "/detska-kniznica/games" %}focus{% endif %}" style="letter-spacing:0" href="/detska-kniznica/games">
+                        <i style="color: rgb(185, 127, 173)" class="icon-games"></i>
+                        <span style="padding-left:5px;font-size:130%;font-weight: bold;">
+                            <span style="color: rgb(157, 207, 238);">H</span>
+                            <span style="color: rgb(221, 158, 191);">R</span>
+                            <span style="color: rgb(241, 205, 82);">Y</span>
+                        </span>
+                    </a>
+                </li>
+                <li id="fairytales">
+                    <a class="side-menu-text {% if request.get_full_path == "/detska-kniznica/videos" %}focus{% endif %}" style="letter-spacing:0" href="/detska-kniznica/videos">
+                        <i style="color: rgb(116, 178, 148)" class="glyphicon glyphicon-facetime-video"></i>
+                        <span style="padding-left:5px;font-size:130%;font-weight: bold;">
+                            <span style="color: rgb(157, 207, 238);">R</span>
+                            <span style="color: rgb(221, 158, 191);">O</span>
+                            <span style="color: rgb(241, 205, 82);">Z</span>
+                            <span style="color: rgb(183, 202, 92);">P</span>
+                            <span style="color: rgb(202, 83, 59);">R</span>
+                            <span style="color: rgb(142, 141, 189);">Á</span>
+                            <span style="color: rgb(136, 192, 194);">V</span>
+                            <span style="color: rgb(224, 159, 74);">K</span>
+                            <span style="color: rgb(202, 84, 127);">Y</span>
+                        </span>
+                    </a>
+                </li>
+                <li id="songs">
+                    <a class="side-menu-text {% if request.get_full_path == "/detska-kniznica/songs" %}focus{% endif %}" style="letter-spacing:0" href="/detska-kniznica/songs">
+                        <i style="color: rgb(194, 0, 31)" class="glyphicon glyphicon-music"></i>
+                        <span style="padding-left:5px;font-size:130%;font-weight: bold;">
+                            <span style="color: rgb(157, 207, 238);">P</span>
+                            <span style="color: rgb(221, 158, 191);">E</span>
+                            <span style="color: rgb(241, 205, 82);">S</span>
+                            <span style="color: rgb(183, 202, 92);">N</span>
+                            <span style="color: rgb(202, 83, 59);">I</span>
+                            <span style="color: rgb(142, 141, 189);">Č</span>
+                            <span style="color: rgb(136, 192, 194);">K</span>
+                            <span style="color: rgb(224, 159, 74);">Y</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

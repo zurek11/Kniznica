@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "styles/footer.css" %}">
+</head>
+<body>
+    <footer class="footer-main">
+        <div class="container-fluid footer">
+            <hr>
+             <div class="row">
+                <div class="col-sm-6 col-md-6 footer">
+                    <ul id="footer_table">
+                        <li class="contact">E-mail: adamzurek14@gmial.com</li>
+                        <li class="contact">Tel. číslo: +421 915 485 478</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-6 footer">
+                    <ul id="footer_table">
+                        <li class="social"><a href="https://www.instagram.com/zurek5426/"><img border="0" alt="Instagram" src="{% static "source/icon/instagram_icon.png" %}" class="footer-image"></a></li>
+                        <li class="social"><a href="https://www.linkedin.com/in/adam-%C5%BE%C3%BArek-46a6a5156/"><img border="0" alt="LinkedIn" src="{% static "source/icon/linkedin_icon.png" %}" class="footer-image"></a></li>
+                        <li class="social"><a href="https://plus.google.com/u/0/116552911768238305257"><img border="0" alt="Google+" src="{% static "source/icon/google_icon.png" %}" class="footer-image"></a></li>
+                        <li class="social"><a href="https://www.facebook.com/adam.zurek.758"><img border="0" alt="Facebook" src="{% static "source/icon/facebook_icon.png" %}" class="footer-image"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 footer">
+                    <p class="contact" align="center">Copyright 2017 FIIT STU - All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -8,6 +8,7 @@ import subprocess
 import base64
 import re
 import os
+import logging
 
 
 def index(request):
@@ -28,27 +29,25 @@ def log_user(request):
             login(request, user)  # the user is now logged in
             return HttpResponseRedirect('/detska-kniznica')
         else:
-            print("Error: log_user_picture: form not valid.")
+            logging.error(form.errors)
             return HttpResponseRedirect('/detska-kniznica')
     elif request.method == 'POST' and 'btn_login' in request.POST:
         form = inputForms.LogUser(request.POST)
+
         if form.is_valid():
-            print(form.errors)
-            user_name = form.cleaned_data['username']
-            user_password = form.cleaned_data['password']
-            user = authenticate(username=user_name, password=user_password)
-            if user is not None:
+            user = form.login(request)
+            if user:
                 request.session.set_expiry(86400)  # sets the exp. value of the session
                 login(request, user)  # the user is now logged in
+                return HttpResponseRedirect('/detska-kniznica')
             else:
-                print(form.errors)
+                logging.error(form.errors)
                 return render(request, "login.html", {'LogUser': form})
-            return HttpResponseRedirect('/detska-kniznica')
         else:
-            print(form.errors)
+            logging.error(form.errors)
             return render(request, "login.html", {'LogUser': form})
     else:
-        print("Error: bad request in login.")
+        logging.error("Bad request in login.")
         return HttpResponseRedirect('/detska-kniznica')
 
 

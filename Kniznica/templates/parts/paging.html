@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paging</title>
+
+    {% load static %}
+    {% load my_tags %}
+
+    <link rel="stylesheet" href="{% static "styles/paging.css" %}">
+</head>
+<body>
+    <div class="row">
+        <div style="text-align:center;" class="col-sm-12 col-md-12 well">
+            <div class="pagination">
+                <span class="step-links">
+                {% if items.has_previous %}
+                    <a href="?{% param_replace page=1 %}" class="btn btn-info btn-lg" style="background-color: #062B69">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </a>
+                    <a href="?{% param_replace page=items.previous_page_number %}" class="btn btn-info btn-lg" style="background-color: #062B69">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </a>
+                {% endif %}
+
+                <a href="#" class="btn btn-info btn-lg" style="background-color: #062B69;pointer-events: none;cursor: default;font-size: 20px;color: #ffffff;line-height: 20px;letter-spacing: 3px;">
+                    {{ items.number }} z {{ items.paginator.num_pages }}
+                </a>
+
+                {% if items.has_next %}
+                    <a href="?{% param_replace page=items.next_page_number %}" class="btn btn-info btn-lg" style="background-color: #062B69">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </a>
+                    <a href="?{% param_replace page=items.paginator.num_pages %}" class="btn btn-info btn-lg" style="background-color: #062B69">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </a>
+                {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

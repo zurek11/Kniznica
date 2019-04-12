@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Knihy</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/books.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <script src="{% static "scripts/book.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% include "parts/search.html" with categories=categories_list url="/detska-kniznica/books/search" only %}
+            <div class="row">
+                <div class="container" style="cursor: auto;">
+                    <div>
+                        <div>
+                            <div>
+                                {% if product %}
+                                <div class="col-md-6">
+                                    <div id="over" style="width:100%; height:100%">
+                                        <h3 align="center" class="book-title">{{ product.title }}</h3>
+                                        <img src={{ product.source }} />
+                                        <p class="book-notes" style="margin-top: 20px">{{ product.notes }}</p>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 20px" class="col-md-6">
+                                    <h4>{{ product.author }}</h4>
+                                    <h5>Vydavateľstvo: {{ product.publisher }}</h5>
+                                    <h5>Kategória: {{ product.category.name }}</h5>
+                                    <h5>Preklad: {{ product.language.name }}</h5>
+                                    <h5>ISBN: {{ book.isbn }}</h5>
+                                    <h5>Vydanie: {{ book.edition }}</h5>
+                                    <h5>Počet strán: {{ book.pages }}</h5>
+                                    <h5>Rok vydania: {{ book.year }}</h5>
+                                    <h5>Voľné výtlačky: {{ available_copies }} z {{ copies }}</h5>
+                                    <div style="margin-top: 20px">
+                                        {% ratings product %}
+                                    </div>
+
+                                    {% if logged %}
+                                    <div class="action">
+                                    <form  action="/detska-kniznica/books/borrow" method="GET" novalidate="novalidate">
+                                        <input name="input_book" class="form-control search-slt" type="hidden" value="{{ product.id }}">
+                                        <button id="borrow_book" class="btn btn-default" type="submit">
+                                            Zapožičaj knihu
+                                        </button>
+                                    </form>
+                                    </div>
+                                    {% endif %}
+                                    {% if copy_check %}
+                                        <p style="color: #8E002B">Nie sú dostupné žiadne voľné výtlačky tejto knihy.</p>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                                {% if borrow_completed %}
+                                    <div id="global-modal" class="modal" tabindex="-1" role="dialog">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-body">
+                                            <p>Objednávka prebehla úspešne.</p>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Späť</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

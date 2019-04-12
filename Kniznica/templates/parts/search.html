@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Rozprávky</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "styles/search.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <script type="text/javascript" src="{% static 'scripts/search.js' %}"></script>
+</head>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-search"></span> VYHĽADÁVANIE</h3>
+                <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-down"></i></span>
+            </div>
+            <div class="panel-body" style="display: none">
+                <form id="search_form" action="{{ url }}" method="GET" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 p-0">
+                            <input name="input" id="input_field" class="form-control search-slt" type="text" value="{{ request.GET.input }}" placeholder="Vyhľadávanie...">
+                            <input name="input_voice" id="input_voice_field" class="form-control search-slt" type="hidden" value="">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select name="input_type" id="select_field" class="form-control search-slt">
+                                <option value="title">Názov</option>
+                                <option value="author">Autor</option>
+                                <option value="publisher">Vydavateľstvo</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <button id="search_button" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                            <button id="search_voice_button" type="button" class="btn btn-primary"><i class="fa fa-microphone" style="width: 16px;height: 16px"></i></button>
+                        </div>
+                    </div>
+                    {% if categories %}
+                    <div class="row" style="margin-top: 20px">
+                        {%  for category in categories %}
+                        <div class="col-md-3">
+                            <label class="container">{{ category.name }}
+                              <input class="checkbox-input" name="categories" type="checkbox" value="{{ category.name }}">
+                              <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        {%  endfor %}
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

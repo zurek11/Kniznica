@@ -1,0 +1,26 @@
+.game-title{
+    display: block;
+    background-color: rgb(185, 127, 173);
+    margin: 10px 60px;
+    border-radius: 30px;
+    border: 5px solid #875D7B;
+}
+.game-title h3{
+    font-family: ChildFont, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.game-notes{
+    display: block;
+    background-color: rgb(185, 127, 173);
+    margin: 10px 60px;
+    border-radius: 0;
+    border: 2px solid #875D7B;
+    font-size: 15px;
+}
+.game{
+    width: 80%;
+    border-radius: 0;
+    border: 5px solid #875D7B;
+}

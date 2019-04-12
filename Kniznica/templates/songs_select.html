@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pesničky</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "styles/main-styles/songs.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% include "parts/search.html" with categories=categories_list url="/detska-kniznica/songs/search" only %}
+            <div class="row">
+                {% for category in categories %}
+                <div style="text-align:center;" class="col-sm-6 col-md-6 main-theme well">
+                    <div id="container" style="height: 480px">
+                        <div class="song-title"><h3>{{ category.name }}</h3></div>
+                        <a href="/detska-kniznica/songs/search?categories={{ category.name }}">
+                            <img class="song" src="{{ category.image }}" height="320">
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% include "parts/paging.html" with items=categories request=request only %}
+        </div>
+
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

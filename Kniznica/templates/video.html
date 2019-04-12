@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rozprávky</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/videos.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% include "parts/search.html" with categories=categories_list url="/detska-kniznica/videos/search" only %}
+            <div class="row">
+                {% if product %}
+                <div style="text-align:center;" class="col-sm-12 col-md-12 main-theme well">
+                    <div id="container">
+                        <div class="video-title"><h3>{{ product.title }}</h3></div>
+                        <div style="width: 80%;margin: 0 auto">
+                            <div style="position: relative;width: 100%;height: 0;padding-bottom: 56.25%;">
+                                <iframe class="video" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"
+                                    allowfullscreen
+                                    src={{ product.url_address }}>
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="video-notes">
+                            <p>{{ product.notes }}</p>
+                        </div>
+                        {% ratings product %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

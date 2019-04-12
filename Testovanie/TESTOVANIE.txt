@@ -25,4 +25,5 @@ digitalne skusenosti: malé
 4. TESTOVANIE
 
 - otvorit sekciu knížky
+- registrácia hlasom
 - prihlásenie

@@ -8,170 +8,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Správičky</title>
+
     {% load static %}
-    <link rel="stylesheet" href="{% static "styles/homepage.css" %}">
-    <script src="{% static "scripts/homepage.js" %}"></script>
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/homepage.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 </head>
 <body>
     <div id="throbber" style="display:none; min-height:120px;"></div>
     <div id="noty-holder"></div>
     <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/detska-kniznica">
-                    <img class="logo" src="{% static "source/logo/main_logo.png" %}" alt="LOGO">
-                </a>
-            </div>
-            <ul class="nav navbar-right top-nav-links">
-               {% if not logged %}
-                <li id="login">
-                    <a href="/detska-kniznica/login" data-placement="bottom" data-toggle="tooltip" data-original-title="Prihlásenie">
-                        PRIHLÁSENIE
-                    </a>
-                </li>
-                <li id="register">
-                    <a href="/detska-kniznica/register" data-placement="bottom" data-toggle="tooltip" data-original-title="Registrácia">
-                        REGISTRÁCIA
-                    </a>
-                </li>
-                {% else %}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user_name }} <b class="fa fa-angle-down"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/detska-kniznica/login/logOut"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                    </ul>
-                </li>
-                {% endif %}
-            </ul>
-            <div class="collapse navbar-collapse navbar-ex1-collapse upper-nav top-nav">
-                <ul class="nav navbar-nav side-nav">
-                    <li id="news">
-                        <a href="/detska-kniznica"><i class="glyphicon glyphicon-list-alt"></i> SPRÁVIČKY</a>
-                    </li>
-                    <li id="books">
-                        <a href="/detska-kniznica/books"><i class="glyphicon glyphicon-book"></i>  KNIHY</a>
-                    </li>
-                    <li id="games">
-                        <a href="/detska-kniznica/games"><i class="icon-games"></i>  HRY</a>
-                    </li>
-                    <li id="fairytales">
-                        <a href="#"><i class="glyphicon glyphicon-facetime-video"></i> ROZPRÁVKY</a>
-                    </li>
-                    <li id="songs">
-                        <a href="#"><i class="glyphicon glyphicon-music"></i> PESNIČKY</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        {% include "parts/nav_bar.html" %}
 
-        <div class="container-fluid">
+        <div class="container-fluid main-container">
+            {% include "parts/main_title.html" %}
+
             <div class="row">
-                <div class="col-sm-12 col-md-12 main-theme">
-                    <img class="main-text" src="{% static "source/image/main_text.png" %}">
-                    <img class="mascot" src="{% static "source/image/mascot_owl.png" %}">
-                    <img class="cloud-1" src="{% static "source/image/cloud1.png" %}">
-                    <img class="cloud-2" src="{% static "source/image/cloud2.png" %}">
-                    <img class="cloud-3" src="{% static "source/image/cloud3.png" %}">
-                    <img class="butterfly" src="{% static "source/image/butterfly.png" %}">
+                {% for new in news %}
+                <div style="text-align:center;" class="col-sm-12 col-md-12 well">
+                    <div id="container">
+                        <img class="image" src={{ new.url_address }}>
+                        <p style="padding-left:10px;font-size:20px; display: table-cell; height: 150px; vertical-align: middle;">{{ new.notes }}</p>
+                        {% ratings new %}
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-12 grass">
-                  <div class="col-xs-2 input-group speech" style="margin-top: 30px">
-                    <input class="form-control" id="voice_input" type="text" placeholder="Rozprávaj" style="margin-top: 5px"/>
-                    <span class="input-group-btn"><button id="btn_voice" class="btn btn-warning"><i class="icon-mic"></i></button></span>
-                  </div>
-                </div>
-            </div>
-            <div class="row" id="main" >
-                <div class="col-sm-6 col-md-6 well">
-                    <button id="helpOn" type="button" class="btn btn-default btn-lg">Áno</button>
-                </div>
-                <div class="col-sm-6 col-md-6 well">
-                    <button id="helpOff" type="button" class="btn btn-default btn-lg">Nie</button>
-                </div>
-            </div>
-            <div class="row" id="main" >
-                <div class="col-sm-12 col-md-12 well">
-                    <h2>SPRÁVIČKA 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id massa pellentesque, rutrum nulla eu, tempor velit. Ut efficitur porta sapien, et iaculis urna dapibus et. Nullam molestie neque non ante gravida hendrerit. Duis a mattis elit, eu auctor arcu. Praesent sit amet nisi sed augue faucibus sollicitudin eu vel leo. Phasellus auctor dui non rhoncus fringilla. Ut enim arcu, feugiat non massa ut, tristique lobortis velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci consectetur, vehicula felis sit amet, imperdiet massa. Curabitur quis interdum risus. Sed bibendum lorem diam, sed lobortis tellus consequat in. Curabitur eu interdum ex. Sed molestie dapibus libero sed tempus. Etiam non iaculis enim. Vestibulum iaculis risus in orci molestie lacinia.
-
-                        Proin porttitor, enim fermentum aliquet consectetur, augue neque eleifend diam, at porta urna orci id turpis. Morbi sed convallis augue. Mauris ac ex eu est interdum blandit id eget dolor. Nunc ultricies enim eget dui maximus tempus. Nunc tempor luctus justo non pharetra. Fusce tempus ante dui, in vestibulum urna efficitur ac. Vivamus egestas blandit risus. Donec posuere tellus nunc, et consequat elit pretium at. Aenean sit amet ultrices ipsum. Pellentesque consequat, eros in maximus convallis, purus leo placerat elit, sed tincidunt urna justo sed arcu. In feugiat tortor quis porttitor varius. Duis condimentum nisi massa, a consectetur felis suscipit eget. Praesent mauris ipsum, rhoncus eget dolor non, aliquet rhoncus erat.
-
-                        Donec bibendum dui a elementum maximus. Sed ut nulla at felis gravida vehicula congue sed nisl. Morbi at turpis risus. In lacinia tincidunt hendrerit. In pretium neque sed hendrerit dapibus. Fusce dignissim tortor ipsum, vitae semper magna euismod vitae. Phasellus quis nibh nulla. Ut sem ipsum, blandit quis justo non, tempus eleifend enim. Vivamus tempus in metus in imperdiet. Sed malesuada justo nec aliquet condimentum. Duis malesuada erat massa, non fringilla ipsum venenatis vitae. Suspendisse fermentum euismod mi et efficitur. Nullam imperdiet eu dolor vel commodo.
-
-                        Ut sed arcu a risus dignissim tempor non a felis. Ut a est mollis, placerat ex hendrerit, volutpat neque. Nullam id urna sed sem cursus sollicitudin eget pretium magna. Mauris rutrum, massa a faucibus tempus, nisi mauris laoreet sapien, in rutrum est augue tincidunt ante. Praesent sed blandit turpis. Vestibulum ut elementum felis, vitae lobortis justo. Suspendisse vel est augue. Nulla facilisi. Donec ut nunc faucibus, molestie sapien id, eleifend orci. Nulla euismod tellus vel consectetur scelerisque. Fusce vitae turpis a mi luctus ullamcorper. Nam bibendum lectus ac justo ornare, at porttitor tellus congue. Etiam semper elit vehicula tellus luctus, sit amet cursus mi pellentesque.
-
-                        Integer dignissim ultricies dui, non auctor nunc hendrerit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at orci dignissim, efficitur est in, iaculis metus. Nullam pretium malesuada ipsum. Donec maximus tortor non sem egestas interdum. Quisque eget arcu vel odio pulvinar porta. Aliquam erat volutpat. Etiam at sem non lectus mollis consequat.
-                    </p>
-                </div>
-            </div>
-            <div class="row" id="main" >
-                <div class="col-sm-12 col-md-12 well">
-                    <h2>SPRÁVIČKA 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id massa pellentesque, rutrum nulla eu, tempor velit. Ut efficitur porta sapien, et iaculis urna dapibus et. Nullam molestie neque non ante gravida hendrerit. Duis a mattis elit, eu auctor arcu. Praesent sit amet nisi sed augue faucibus sollicitudin eu vel leo. Phasellus auctor dui non rhoncus fringilla. Ut enim arcu, feugiat non massa ut, tristique lobortis velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci consectetur, vehicula felis sit amet, imperdiet massa. Curabitur quis interdum risus. Sed bibendum lorem diam, sed lobortis tellus consequat in. Curabitur eu interdum ex. Sed molestie dapibus libero sed tempus. Etiam non iaculis enim. Vestibulum iaculis risus in orci molestie lacinia.
-
-                        Proin porttitor, enim fermentum aliquet consectetur, augue neque eleifend diam, at porta urna orci id turpis. Morbi sed convallis augue. Mauris ac ex eu est interdum blandit id eget dolor. Nunc ultricies enim eget dui maximus tempus. Nunc tempor luctus justo non pharetra. Fusce tempus ante dui, in vestibulum urna efficitur ac. Vivamus egestas blandit risus. Donec posuere tellus nunc, et consequat elit pretium at. Aenean sit amet ultrices ipsum. Pellentesque consequat, eros in maximus convallis, purus leo placerat elit, sed tincidunt urna justo sed arcu. In feugiat tortor quis porttitor varius. Duis condimentum nisi massa, a consectetur felis suscipit eget. Praesent mauris ipsum, rhoncus eget dolor non, aliquet rhoncus erat.
-
-                        Donec bibendum dui a elementum maximus. Sed ut nulla at felis gravida vehicula congue sed nisl. Morbi at turpis risus. In lacinia tincidunt hendrerit. In pretium neque sed hendrerit dapibus. Fusce dignissim tortor ipsum, vitae semper magna euismod vitae. Phasellus quis nibh nulla. Ut sem ipsum, blandit quis justo non, tempus eleifend enim. Vivamus tempus in metus in imperdiet. Sed malesuada justo nec aliquet condimentum. Duis malesuada erat massa, non fringilla ipsum venenatis vitae. Suspendisse fermentum euismod mi et efficitur. Nullam imperdiet eu dolor vel commodo.
-
-                        Ut sed arcu a risus dignissim tempor non a felis. Ut a est mollis, placerat ex hendrerit, volutpat neque. Nullam id urna sed sem cursus sollicitudin eget pretium magna. Mauris rutrum, massa a faucibus tempus, nisi mauris laoreet sapien, in rutrum est augue tincidunt ante. Praesent sed blandit turpis. Vestibulum ut elementum felis, vitae lobortis justo. Suspendisse vel est augue. Nulla facilisi. Donec ut nunc faucibus, molestie sapien id, eleifend orci. Nulla euismod tellus vel consectetur scelerisque. Fusce vitae turpis a mi luctus ullamcorper. Nam bibendum lectus ac justo ornare, at porttitor tellus congue. Etiam semper elit vehicula tellus luctus, sit amet cursus mi pellentesque.
-
-                        Integer dignissim ultricies dui, non auctor nunc hendrerit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at orci dignissim, efficitur est in, iaculis metus. Nullam pretium malesuada ipsum. Donec maximus tortor non sem egestas interdum. Quisque eget arcu vel odio pulvinar porta. Aliquam erat volutpat. Etiam at sem non lectus mollis consequat.
-                    </p>
-                </div>
-            </div>
-            <div class="row" id="main" >
-                <div class="col-sm-12 col-md-12 well">
-                    <h2>SPRÁVIČKA 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id massa pellentesque, rutrum nulla eu, tempor velit. Ut efficitur porta sapien, et iaculis urna dapibus et. Nullam molestie neque non ante gravida hendrerit. Duis a mattis elit, eu auctor arcu. Praesent sit amet nisi sed augue faucibus sollicitudin eu vel leo. Phasellus auctor dui non rhoncus fringilla. Ut enim arcu, feugiat non massa ut, tristique lobortis velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci consectetur, vehicula felis sit amet, imperdiet massa. Curabitur quis interdum risus. Sed bibendum lorem diam, sed lobortis tellus consequat in. Curabitur eu interdum ex. Sed molestie dapibus libero sed tempus. Etiam non iaculis enim. Vestibulum iaculis risus in orci molestie lacinia.
-
-                        Proin porttitor, enim fermentum aliquet consectetur, augue neque eleifend diam, at porta urna orci id turpis. Morbi sed convallis augue. Mauris ac ex eu est interdum blandit id eget dolor. Nunc ultricies enim eget dui maximus tempus. Nunc tempor luctus justo non pharetra. Fusce tempus ante dui, in vestibulum urna efficitur ac. Vivamus egestas blandit risus. Donec posuere tellus nunc, et consequat elit pretium at. Aenean sit amet ultrices ipsum. Pellentesque consequat, eros in maximus convallis, purus leo placerat elit, sed tincidunt urna justo sed arcu. In feugiat tortor quis porttitor varius. Duis condimentum nisi massa, a consectetur felis suscipit eget. Praesent mauris ipsum, rhoncus eget dolor non, aliquet rhoncus erat.
-
-                        Donec bibendum dui a elementum maximus. Sed ut nulla at felis gravida vehicula congue sed nisl. Morbi at turpis risus. In lacinia tincidunt hendrerit. In pretium neque sed hendrerit dapibus. Fusce dignissim tortor ipsum, vitae semper magna euismod vitae. Phasellus quis nibh nulla. Ut sem ipsum, blandit quis justo non, tempus eleifend enim. Vivamus tempus in metus in imperdiet. Sed malesuada justo nec aliquet condimentum. Duis malesuada erat massa, non fringilla ipsum venenatis vitae. Suspendisse fermentum euismod mi et efficitur. Nullam imperdiet eu dolor vel commodo.
-
-                        Ut sed arcu a risus dignissim tempor non a felis. Ut a est mollis, placerat ex hendrerit, volutpat neque. Nullam id urna sed sem cursus sollicitudin eget pretium magna. Mauris rutrum, massa a faucibus tempus, nisi mauris laoreet sapien, in rutrum est augue tincidunt ante. Praesent sed blandit turpis. Vestibulum ut elementum felis, vitae lobortis justo. Suspendisse vel est augue. Nulla facilisi. Donec ut nunc faucibus, molestie sapien id, eleifend orci. Nulla euismod tellus vel consectetur scelerisque. Fusce vitae turpis a mi luctus ullamcorper. Nam bibendum lectus ac justo ornare, at porttitor tellus congue. Etiam semper elit vehicula tellus luctus, sit amet cursus mi pellentesque.
-
-                        Integer dignissim ultricies dui, non auctor nunc hendrerit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at orci dignissim, efficitur est in, iaculis metus. Nullam pretium malesuada ipsum. Donec maximus tortor non sem egestas interdum. Quisque eget arcu vel odio pulvinar porta. Aliquam erat volutpat. Etiam at sem non lectus mollis consequat.
-                    </p>
-                </div>
-            </div>
+            {% include "parts/paging.html" with items=news request=request only %}
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <hr>
-                 <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <ul id="footer_table">
-                            <li class="contact">E-mail: adamzurek14@gmial.com</li>
-                            <li class="contact">Tel. číslo: +421 915 485 478</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <ul id="footer_table">
-                            <li class="social"><a href="https://www.instagram.com/zurek5426/"><img border="0" alt="Instagram" src="{% static "source/icon/instagram_icon.png" %}" class="footer-image"></a></li>
-                            <li class="social"><a href="https://www.linkedin.com/in/adam-%C5%BE%C3%BArek-46a6a5156/"><img border="0" alt="LinkedIn" src="{% static "source/icon/linkedin_icon.png" %}" class="footer-image"></a></li>
-                            <li class="social"><a href="https://plus.google.com/u/0/116552911768238305257"><img border="0" alt="Google+" src="{% static "source/icon/google_icon.png" %}" class="footer-image"></a></li>
-                            <li class="social"><a href="https://www.facebook.com/adam.zurek.758"><img border="0" alt="Facebook" src="{% static "source/icon/facebook_icon.png" %}" class="footer-image"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <p class="contact" align="center">Copyright 2017 FIIT STU - All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include "parts/footer.html" %}
     </div>
 </body>
 </html>

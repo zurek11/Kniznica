@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Knihy</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/books.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <script src="{% static "scripts/borrow.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% include "parts/search.html" with categories=categories_list url="/detska-kniznica/books/search" only %}
+            <div class="row">
+                <div class="container" style="cursor: auto;">
+                    <div>
+                        <div>
+                            <div>
+                                {% if product %}
+                                <div class="col-md-6">
+                                    <div id="over" style="width:100%; height:100%">
+                                        <h3 align="center" class="book-title">{{ product.title }}</h3>
+                                        <img src={{ product.source }} />
+                                    </div>
+                                </div>
+                                <div style="margin-top: 20px" class="col-md-6">
+                                    <h4>{{ product.author }}</h4>
+                                    <h5>Vydavateľstvo: {{ product.publisher }}</h5>
+                                    <h5>Kategória: {{ product.category.name }}</h5>
+                                    <h5>Preklad: {{ product.language.name }}</h5>
+                                    <form id="search_form" action="/detska-kniznica/books/borrow" method="GET" novalidate="novalidate">
+                                        <span>Čas objednania:</span>
+                                        <div class='input-group date'>
+                                          <input name="borrow_date" type='text' class="form-control datetimepicker" />
+                                          <span class="input-group-addon datetimepicker-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                        </div>
+                                        {% if borrow_date_error %}
+                                            <p style="color: #8E002B">{{ borrow_date_error }}</p>
+                                        {% endif %}
+                                        <span>Čas ukončenia:</span>
+                                        <div class='input-group date'>
+                                          <input name="expire_date" type='text' class="form-control datetimepicker" />
+                                          <span class="input-group-addon datetimepicker-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                        </div>
+                                       {% if expire_date_error %}
+                                            <p style="color: #8E002B">{{ expire_date_error }}</p>
+                                        {% endif %}
+                                        <input name="input_book" class="form-control search-slt" type="hidden" value="{{ product.id }}">
+                                        {% if logged %}
+                                            <button id="borrow_book" class="btn btn-default" type="button" data-toggle="modal" data-target="#exampleModal">
+                                                Zapožičaj knihu
+                                            </button>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-body">
+                                                    Potvrdiť zapožičanie?
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Späť</button>
+                                                    <button type="submit" class="btn btn-primary">Potvrdenie</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        {% endif %}
+                                    </form>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

@@ -5,14 +5,16 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Registrácia</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static "styles/register.css" %}">
-  <script src="{% static "scripts/register.js" %}"></script>
+    <meta charset="UTF-8">
+    <title>Registrácia</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "styles/main-styles/register.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+    <script src="{% static "scripts/register.js" %}"></script>
 </head>
     <body>
-        <div id="wrapper">
+        <div id="wrapper" style="padding: 0">
             <nav class="navbar navbar-inverse navbar-fixed-top top-nav" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -33,7 +35,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="container-fluid">
+            <div class="container-fluid main-container">
                 <div class="card card-container">
                     <img id="main-img" src="{% static "source/image/registracia.png" %}"/>
                     <form action="/detska-kniznica/register/newUser" method="post" novalidate>
@@ -98,32 +100,7 @@
                     </form>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <hr>
-                     <div class="row">
-                        <div class="col-sm-6 col-md-6">
-                            <ul id="footer_table">
-                                <li class="contact">E-mail: adamzurek14@gmial.com</li>
-                                <li class="contact">Tel. číslo: +421 915 485 478</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <ul id="footer_table">
-                                <li class="social"><a href="https://www.instagram.com/zurek5426/"><img border="0" alt="Instagram" src="{% static "source/icon/instagram_icon.png" %}" class="footer-image"></a></li>
-                                <li class="social"><a href="https://www.linkedin.com/in/adam-%C5%BE%C3%BArek-46a6a5156/"><img border="0" alt="LinkedIn" src="{% static "source/icon/linkedin_icon.png" %}" class="footer-image"></a></li>
-                                <li class="social"><a href="https://plus.google.com/u/0/116552911768238305257"><img border="0" alt="Google+" src="{% static "source/icon/google_icon.png" %}" class="footer-image"></a></li>
-                                <li class="social"><a href="https://www.facebook.com/adam.zurek.758"><img border="0" alt="Facebook" src="{% static "source/icon/facebook_icon.png" %}" class="footer-image"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12">
-                            <p class="contact" align="center">Copyright 2017 FIIT STU - All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            {% include "parts/footer.html" %}
         </div>
     </body>
 </html>

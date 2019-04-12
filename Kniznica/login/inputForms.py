@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 
 
@@ -18,14 +18,20 @@ class LogUser(forms.Form):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
 
-    def clean_username(self):
-        valid_name = self.cleaned_data['username']
-        if not User.objects.filter(username=valid_name).exists():
-            raise forms.ValidationError(u'Username "%s" is not recognized.' % valid_name)
-        return valid_name
+    def clean(self):
+        input_username = self.cleaned_data.get('username')
+        input_password = self.cleaned_data.get('password')
+        input_picture = self.cleaned_data.get('pic1')
+        user = authenticate(username=input_username, password=input_password)
 
-    # def clean_password(self):
-    #     valid_password = self.cleaned_data['password']
-    #     if not User.objects.filter(password=valid_password).exists():
-    #         raise forms.ValidationError(u'Password is not recognized.')
-    #     return valid_password
+        if not input_picture:
+            if not user or not user.is_active:
+                raise forms.ValidationError(u'Nesprávne prihlasovacie údaje.')
+            else:
+                return self.cleaned_data
+
+    def login(self, request):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+        return user

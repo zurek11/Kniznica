@@ -1,0 +1,59 @@
+img {
+  max-width: 100%;
+}
+
+h5{
+    margin-top: 20px;
+}
+
+.book-title{
+    display: block;
+    background-color: rgb(79, 129, 189);
+    border-radius: 30px;
+    padding: 2px;
+    border: 5px solid #3A5C86;
+}
+.book-title h3{
+    font-family: ChildFont, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.book-notes{
+    display: block;
+    background-color: rgb(79, 129, 189);
+    margin: 10px 20px;
+    border-radius: 0;
+    border: 2px solid #3A5C86;
+    padding: 10px;
+    font-size: 18px;
+}
+.book{
+    width: 50%;
+    border-radius: 0;
+    border: 5px solid #3A5C86;
+}
+
+#over img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#borrow_book{
+    background-color: #062B69;
+    color: white;
+}
+
+#borrow_book:hover{
+    background-color: #12459B;
+}
+
+.date{
+    color: #222222;
+    background-color: white;
+}
+
+input, select, textarea{
+    color: #ff0000;
+}

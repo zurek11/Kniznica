@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hry</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/games.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container">
+            {% include "parts/search.html" with categories=categories_list url="/detska-kniznica/games/search" only %}
+            <div class="row">
+                {% for product in products %}
+                <div style="text-align:center;" class="col-sm-6 col-md-6 main-theme well">
+                    <div id="container" style="height: 620px">
+                        <div class="game-title"><h3>{{ product.title }}</h3></div>
+                        <div>
+                            <a href="/detska-kniznica/games/{{ product.id }}">
+                                <img class="game" src="{{ product.source }}">
+                            </a>
+                        </div>
+                        <div class="game-notes">
+                            <p>{{ product.notes }}</p>
+                        </div>
+                        {% ratings product %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% include "parts/paging.html" with items=products request=request only %}
+        </div>
+
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

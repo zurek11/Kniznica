@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==2.1.*"
+pymarc = "*"
+beautifulsoup4 = "*"
+sickle = "*"
+pyoai = "*"
+pillow = "*"
+django-star-ratings = "*"
+xmltodict = "*"
+unidecode = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

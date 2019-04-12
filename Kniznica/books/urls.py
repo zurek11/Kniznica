@@ -1,8 +1,10 @@
+from django.conf.urls import url
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('/getBooks', views.get_books, name="getBooks"),
-    path('/showBooks', views.show_books, name="showBooks"),
+    url(r'^/search$', views.search, name='search_books'),
+    url(r'^/borrow$', views.borrow, name='borrow_book'),
+    url(r'/(?P<index>\d+)$', views.play, name='play_book')
 ]
