@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Štatistiky</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/statistics.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% if logged %}
+                <div class="row">
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer zobrazenia typov produktov.</h3>
+                        <canvas id="ProductChart"></canvas>
+                    </div>
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer zobrazenia kategórií kníh.</h3>
+                        <canvas id="BookCategoryChart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer zobrazenia kategórií hier.</h3>
+                        <canvas id="GameCategoryChart"></canvas>
+                    </div>
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer zobrazenia kategórií rozprávok.</h3>
+                        <canvas id="VideoCategoryChart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer zobrazenia kategórií pesničiek.</h3>
+                        <canvas id="SongCategoryChart"></canvas>
+                    </div>
+                    <div style="text-align:center; padding: 100px 100px 100px 100px;" class="col-sm-6 col-md-6 main-theme well">
+                        <h3>Pomer vypožičania kategórií kníh.</h3>
+                        <canvas id="BookRentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+<script type="text/javascript">
+var productChart = document.getElementById("ProductChart");
+var bookCategoryChart = document.getElementById("BookCategoryChart");
+var gameCategoryChart = document.getElementById("GameCategoryChart");
+var videoCategoryChart = document.getElementById("VideoCategoryChart");
+var songCategoryChart = document.getElementById("SongCategoryChart");
+var bookRentChart = document.getElementById("BookRentChart");
+var i = 0;
+
+var types = {{types|safe}};
+var statistics_types = {{statistics_types|safe}};
+var statistics_types_colors = [];
+
+for (i = 0; i < statistics_types.length; i++) {
+    statistics_types_colors.push(getRandomColor())
+}
+
+var categories_books = {{ categories_books|safe }};
+var statistics_book_category = {{ statistics_book_category|safe }};
+var statistics_book_category_colors = [];
+
+for (i = 0; i < statistics_book_category.length; i++) {
+    statistics_book_category_colors.push(getRandomColor())
+}
+
+var categories_games = {{ categories_games|safe }};
+var statistics_game_category = {{ statistics_game_category|safe }};
+var statistics_game_category_colors = [];
+
+for (i = 0; i < statistics_game_category.length; i++) {
+    statistics_game_category_colors.push(getRandomColor())
+}
+
+var categories_videos = {{ categories_videos|safe }};
+var statistics_video_category = {{ statistics_video_category|safe }};
+var statistics_video_category_colors = [];
+
+for (i = 0; i < statistics_video_category.length; i++) {
+    statistics_video_category_colors.push(getRandomColor())
+}
+
+var categories_songs = {{ categories_songs|safe }};
+var statistics_song_category = {{ statistics_song_category|safe }};
+var statistics_song_category_colors = [];
+
+for (i = 0; i < statistics_song_category.length; i++) {
+    statistics_song_category_colors.push(getRandomColor())
+}
+
+var categories_borrow_books = {{ categories_borrow_books|safe }};
+var statistics_book_borrow = {{ statistics_book_borrow|safe }};
+var statistics_book_borrow_colors = [];
+
+for (i = 0; i < statistics_book_borrow.length; i++) {
+    statistics_book_borrow_colors.push(getRandomColor())
+}
+
+
+var myProductChart = new Chart(productChart, {
+    type: 'pie',
+    data: {
+        labels: types,
+        datasets: [{
+            data: statistics_types,
+            backgroundColor: statistics_types_colors,
+            hoverBackgroundColor: statistics_types_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+var myBookCategoryChart = new Chart(bookCategoryChart, {
+    type: 'pie',
+    data: {
+        labels: categories_books,
+        datasets: [{
+            data: statistics_book_category,
+            backgroundColor: statistics_book_category_colors,
+            hoverBackgroundColor: statistics_book_category_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+var myGameCategoryChart = new Chart(gameCategoryChart, {
+    type: 'pie',
+    data: {
+        labels: categories_games,
+        datasets: [{
+            data: statistics_game_category,
+            backgroundColor: statistics_game_category_colors,
+            hoverBackgroundColor: statistics_game_category_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+var myVideoCategoryChart = new Chart(videoCategoryChart, {
+    type: 'pie',
+    data: {
+        labels: categories_videos,
+        datasets: [{
+            data: statistics_video_category,
+            backgroundColor: statistics_video_category_colors,
+            hoverBackgroundColor: statistics_video_category_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+var mySongCategoryChart = new Chart(songCategoryChart, {
+    type: 'pie',
+    data: {
+        labels: categories_songs,
+        datasets: [{
+            data: statistics_song_category,
+            backgroundColor: statistics_song_category_colors,
+            hoverBackgroundColor: statistics_song_category_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+var myBookRentChart = new Chart(bookRentChart, {
+    type: 'pie',
+    data: {
+        labels: categories_borrow_books,
+        datasets: [{
+            data: statistics_book_borrow,
+            backgroundColor: statistics_book_borrow_colors,
+            hoverBackgroundColor: statistics_book_borrow_colors
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+</script>
+</html>

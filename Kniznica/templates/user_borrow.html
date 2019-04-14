@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Výpožičky</title>
+
+    {% load static %}
+    {% load ratings %}
+
+    <link rel="stylesheet" href="{% static "styles/main-styles/user_borrow.css" %}">
+    <link rel="stylesheet" href="{% static "styles/wrapper.css" %}">
+
+    <script src="{% static "scripts/user_borrow.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+<body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        {% include "parts/nav_bar.html" %}
+
+        <div class="container-fluid main-container" style="padding-top: 20px">
+            {% if logged %}
+                <div class="row">
+                    {% if products %}
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Názov</th>
+                                    <th scope="col">Autor</th>
+                                    <th scope="col">Vydavateľstvo</th>
+                                    <th scope="col">Kategória</th>
+                                    <th scope="col">Preklad</th>
+                                    <th scope="col">Vypožičané</th>
+                                    <th scope="col">Prevzaté</th>
+                                    <th scope="col">Vrátenie do</th>
+                                    <th scope="col">Vrátené</th>
+                                    <th scope="col">Vrátenie knihy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>{{ product.0.title }}</td>
+                                    <td>{{ product.0.author }}</td>
+                                    <td>{{ product.0.publisher }}</td>
+                                    <td>{{ product.0.category.name }}</td>
+                                    <td>{{ product.0.language.name }}</td>
+                                    <th>{{ product.1.created_at }}</th>
+                                    <th>{{ product.1.borrow_at }}</th>
+                                    <th>{{ product.1.expires_at }}</th>
+                                    {% if product.1.deleted_at %}
+                                        <th>{{ product.1.deleted_at }}</th>
+                                    {% else %}
+                                        <th></th>
+                                    {% endif %}
+                                    <td>
+                                        {% if not product.1.deleted_at %}
+                                        <form action="/detska-kniznica/return">
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                                <span class="glyphicon glyphicon-new-window"></span>
+                                            </button>
+                                            <input name="id" class="form-control search-slt" type="hidden" value="{{ product.1.id }}">
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            Potvrdiť vrátenie?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Späť</button>
+                                                            <button type="submit" class="btn btn-primary">Potvrdenie</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+        {% include "parts/footer.html" %}
+    </div>
+</body>
+</html>

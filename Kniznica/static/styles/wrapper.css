@@ -22,7 +22,7 @@
 }
 
 .main-container{
-    min-height: 74.5vh;
+    min-height: calc(100vh - 183px);
 }
 
 #container{

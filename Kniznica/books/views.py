@@ -1,11 +1,12 @@
 import datetime
 import logging
+import re
 
 import unidecode
 from django.core.paginator import Paginator
 from django.http import Http404
 from django.shortcuts import render
-from register.models import Type, Product, Category, CopyBook, Book, Borrow
+from register.models import Type, Product, Category, CopyBook, Book, Borrow, StatisticsProductUse
 
 
 def index(request):
@@ -55,6 +56,17 @@ def play(request, index):
     if request.user.is_authenticated:
         logged = True
         user_name = request.user
+
+        try:
+            statistic = StatisticsProductUse.objects.get(user=user_name, product=product)
+            statistic.counter += 1
+            statistic.save()
+        except StatisticsProductUse.DoesNotExist:
+            StatisticsProductUse.objects.create(
+                user=user_name,
+                product=product,
+                counter=1
+            )
 
     return render(
         request,
