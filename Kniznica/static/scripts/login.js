@@ -35,7 +35,8 @@ $(function() {
         navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
             try {
               video.srcObject = stream;
-            } catch (error) {
+            }
+            catch (error) {
               video.src = window.URL.createObjectURL(stream);
             }
             video.play();
