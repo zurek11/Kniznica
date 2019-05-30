@@ -13,6 +13,7 @@ pillow = "*"
 django-star-ratings = "*"
 xmltodict = "*"
 unidecode = "*"
+gunicorn = "*"
 
 [dev-packages]
 
