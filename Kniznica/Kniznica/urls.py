@@ -1,9 +1,11 @@
 from django.conf.urls import url
 from django.contrib import admin
+from django.http import HttpResponseRedirect
 from django.urls import include, path
 from Kniznica import views
 
 urlpatterns = [
+    path(r'', lambda r: HttpResponseRedirect('detska-kniznica')),
     path('detska-kniznica', include('homepage.urls'), name='news'),
     path('detska-kniznica/games', include('games.urls'), name='games'),
     path('detska-kniznica/books', include('books.urls'), name='books'),

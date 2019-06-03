@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bbdb38fa-2b7f-4cfe-94c3-d596dd48a320" name="Default" comment="- Final changes implemented.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kniznica/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kniznica/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parts/nav_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parts/nav_bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceId/logged.png" beforeDir="false" afterPath="$PROJECT_DIR$/faceId/logged.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/face-detection.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/face-detection.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,30 +58,60 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_games.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pipfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="19" />
+              <caret line="12" column="19" selection-start-line="12" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/management/commands/show_urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/video.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="187">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user_borrow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1632">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Kniznica/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -88,64 +120,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/borrow">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-              </filtering>
+        <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_books.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2431">
+              <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/parts/main_title.html">
+        <entry file="file://$PROJECT_DIR$/Pipfile.lock">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/parts/nav_bar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="49" column="112" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_videos.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/games/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
-              <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_news.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -213,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/scripts/voice-recognition.js" />
         <option value="$PROJECT_DIR$/static/scripts/search.js" />
         <option value="$PROJECT_DIR$/video/urls.py" />
         <option value="$PROJECT_DIR$/songs/urls.py" />
@@ -249,7 +236,6 @@
         <option value="$PROJECT_DIR$/static/styles/main-styles/user_borrow.css" />
         <option value="$PROJECT_DIR$/templates/borrow.html" />
         <option value="$PROJECT_DIR$/templates/user_borrow.html" />
-        <option value="$PROJECT_DIR$/Kniznica/urls.py" />
         <option value="$PROJECT_DIR$/static/styles/main-styles/statistics.css" />
         <option value="$PROJECT_DIR$/static/scripts/statistics.js" />
         <option value="$PROJECT_DIR$/register/models/statistics_product_use.py" />
@@ -264,6 +250,8 @@
         <option value="$PROJECT_DIR$/register/management/commands/scrap_books.py" />
         <option value="$PROJECT_DIR$/register/management/commands/show_urls.py" />
         <option value="$PROJECT_DIR$/templates/parts/nav_bar.html" />
+        <option value="$PROJECT_DIR$/static/scripts/face-detection.js" />
+        <option value="$PROJECT_DIR$/Kniznica/urls.py" />
       </list>
     </option>
   </component>
@@ -285,6 +273,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -412,7 +401,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,7 +414,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../BackBone/Alto/afs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
@@ -612,6 +600,17 @@
       <workItem from="1556647163212" duration="4286000" />
       <workItem from="1556694825634" duration="3548000" />
       <workItem from="1556727972086" duration="1320000" />
+      <workItem from="1556869456888" duration="153000" />
+      <workItem from="1559129254173" duration="947000" />
+      <workItem from="1559136230921" duration="2315000" />
+      <workItem from="1559143760487" duration="732000" />
+      <workItem from="1559202688713" duration="115000" />
+      <workItem from="1559209169318" duration="4998000" />
+      <workItem from="1559243004507" duration="345000" />
+      <workItem from="1559418843903" duration="693000" />
+      <workItem from="1559546474168" duration="333000" />
+      <workItem from="1559546915378" duration="1117000" />
+      <workItem from="1559560666971" duration="1644000" />
     </task>
     <task id="LOCAL-00001" summary="Bakalárka">
       <created>1524907500969</created>
@@ -641,11 +640,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556697367830</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Final changes implemented.">
+      <created>1556869564651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556869564651</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Gunicorn">
+      <created>1559229019541</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559229019541</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240516000" />
+    <option name="totallyTimeSpent" value="253908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,10 +670,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2419571" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.3295325" />
@@ -669,7 +682,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39930254" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.47707888" weight="0.7595474" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.47707888" weight="0.75947994" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3281471" />
       <window_info anchor="bottom" id="Database Console" order="8" sideWeight="0.21002132" side_tool="true" weight="0.52979416" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5229211" side_tool="true" weight="0.5839653" />
@@ -679,15 +692,15 @@
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32719395" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" sideWeight="0.4859095" weight="0.32955536" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.7899787" weight="0.9575672" />
+      <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.7899787" weight="0.44978783" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.68033946" visible="true" weight="0.19504021" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.66630554" visible="true" weight="0.15405117" />
       <window_info anchor="right" id="SciView" order="4" sideWeight="0.4950495" weight="0.327748" />
       <window_info anchor="right" id="Data View" order="5" />
       <window_info anchor="right" id="Remote Host" order="6" sideWeight="0.5408805" weight="0.13859275" />
-      <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="7" sideWeight="0.31966054" side_tool="true" visible="true" weight="0.19504021" />
+      <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="7" sideWeight="0.3336945" side_tool="true" visible="true" weight="0.15405117" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1433902" />
@@ -778,32 +791,10 @@
     <MESSAGE value="- Finished all use-cases&#10;- Finished all scrapping tools&#10;- Finished rent book" />
     <MESSAGE value="- Implemented statistics.&#10;- Implemented book return." />
     <MESSAGE value="- Final changes implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Final changes implemented." />
+    <MESSAGE value="Gunicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gunicorn" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/styles/main-styles/books.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/styles/search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homepage/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/songs/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -848,7 +839,7 @@
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/categories">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true">
+          <filtering>
             <filter text="" />
           </filtering>
         </state>
@@ -909,23 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_borrow.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kniznica/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/scripts/statistics.js" />
     <entry file="file://$PROJECT_DIR$/static/styles/main-styles/statistics.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -937,17 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/types">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true">
+          <filtering>
             <filter text="" />
           </filtering>
         </state>
@@ -966,7 +933,7 @@
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/copy_book">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true" text="id=977">
+          <filtering>
             <filter text="id=977" />
             <filter text="" />
           </filtering>
@@ -986,7 +953,7 @@
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/products">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true" text="id=3532">
+          <filtering>
             <filter text="id=3532" />
             <filter text="type_id=6" />
             <filter text="type_id=2" />
@@ -1000,7 +967,7 @@
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/books">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true" text="id=330">
+          <filtering>
             <filter text="id=330" />
             <filter text="" />
           </filtering>
@@ -1010,7 +977,7 @@
     <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/statistics_product_use">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true">
+          <filtering>
             <filter text="" />
           </filtering>
         </state>
@@ -1051,23 +1018,6 @@
     <entry file="file://$PROJECT_DIR$/faceId/Zuzga13/face5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_books.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3859">
-          <caret line="233" column="39" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_games.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1077,16 +1027,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/management/commands/show_urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1094,9 +1037,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/borrow">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="580fd45c-92f5-4fe5-bc83-af94fa4afe23">
+          <filtering />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/parts/main_title.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/parts/nav_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_videos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -1106,7 +1066,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/games/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
+        <state relative-caret-position="1921">
           <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -1116,13 +1076,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_news.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" selection-start-line="12" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_borrow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_books.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1131,22 +1142,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://1c833b97-1886-4b5f-a33f-a6b9e5f8245b/schema/main/table/borrow">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/parts/main_title.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/parts/nav_bar.html">
+    <entry file="file://$PROJECT_DIR$/Kniznica/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="49" column="112" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
