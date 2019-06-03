@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbdb38fa-2b7f-4cfe-94c3-d596dd48a320" name="Default" comment="- Implemented redirect from root to detska-kniznica.">
+    <list default="true" id="bbdb38fa-2b7f-4cfe-94c3-d596dd48a320" name="Default" comment="- Added allowed hosts.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kniznica/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kniznica/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/face-detection.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/face-detection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/face-recognition.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/face-recognition.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,24 +58,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/video.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user_borrow.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
@@ -82,64 +67,84 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
+        <entry file="file://$PROJECT_DIR$/static/scripts/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="612">
+              <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kniznica/urls.py">
+        <entry file="file://$PROJECT_DIR$/static/scripts/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-230" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/scripts/user_borrow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
+        <entry file="file://$PROJECT_DIR$/register/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_books.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
+            <state relative-caret-position="552">
+              <caret line="44" column="66" lean-forward="true" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pipfile.lock">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/statistics.html">
+        <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3502">
-              <caret line="206" column="6" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
+            <state relative-caret-position="34">
+              <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="773">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faceId/model.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -198,9 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/video/urls.py" />
-        <option value="$PROJECT_DIR$/songs/urls.py" />
-        <option value="$PROJECT_DIR$/games/urls.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1c833b97-1886-4b5f-a33f-a6b9e5f8245b/console_4.sql" />
         <option value="$PROJECT_DIR$/register/models/book.py" />
         <option value="$PROJECT_DIR$/static/styles/nav_bar.css" />
@@ -246,9 +248,12 @@
         <option value="$PROJECT_DIR$/register/management/commands/scrap_books.py" />
         <option value="$PROJECT_DIR$/register/management/commands/show_urls.py" />
         <option value="$PROJECT_DIR$/templates/parts/nav_bar.html" />
-        <option value="$PROJECT_DIR$/static/scripts/face-detection.js" />
         <option value="$PROJECT_DIR$/Kniznica/urls.py" />
         <option value="$PROJECT_DIR$/Kniznica/settings.py" />
+        <option value="$PROJECT_DIR$/static/scripts/face-detection.js" />
+        <option value="$PROJECT_DIR$/login/views.py" />
+        <option value="$PROJECT_DIR$/static/scripts/face-recognition.js" />
+        <option value="$PROJECT_DIR$/register/views.py" />
       </list>
     </option>
   </component>
@@ -281,48 +286,12 @@
             <path>
               <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
               <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
@@ -592,7 +561,7 @@
       <workItem from="1559418843903" duration="693000" />
       <workItem from="1559546474168" duration="333000" />
       <workItem from="1559546915378" duration="1117000" />
-      <workItem from="1559560666971" duration="2315000" />
+      <workItem from="1559560666971" duration="3322000" />
     </task>
     <task id="LOCAL-00001" summary="Bakalárka">
       <created>1524907500969</created>
@@ -643,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559579734170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- Added allowed hosts.">
+      <created>1559580853378</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559580853378</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254579000" />
+    <option name="totallyTimeSpent" value="255586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,44 +758,10 @@
     <MESSAGE value="- Final changes implemented." />
     <MESSAGE value="Gunicorn" />
     <MESSAGE value="- Implemented redirect from root to detska-kniznica." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Implemented redirect from root to detska-kniznica." />
+    <MESSAGE value="- Added allowed hosts." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added allowed hosts." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/songs/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homepage/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kniznica/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Kniznica/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -879,13 +821,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/styles/main-styles/user_borrow.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/scripts/user_borrow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/scripts/statistics.js" />
     <entry file="file://$PROJECT_DIR$/static/styles/main-styles/statistics.css">
@@ -1092,23 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/management/commands/scrap_books.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2431">
@@ -1141,8 +1059,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="340">
+          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faceId/model.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/face-detection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/face-recognition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/scripts/user_borrow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="44" column="66" lean-forward="true" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

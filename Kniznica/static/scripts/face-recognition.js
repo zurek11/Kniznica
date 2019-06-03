@@ -1,7 +1,7 @@
 const fr = require('face-recognition');
 const recognizer = fr.FaceRecognizer();
-const pathToJson = ('..\\..\\faceId\\model.json');
-const pathToImage = ('..\\..\\faceId\\logged.png');
+const pathToJson = ('../../faceId/model.json');
+const pathToImage = ('../../faceId/logged.png');
 var recognized_image;
 var min = 1;
 var index;

@@ -62,7 +62,7 @@ def prepare_log_img(picture):
     filename = SITE_ROOT + "/faceId/logged.png"
     with open(filename, 'wb') as f:
         f.write(img_data)
-    os.chdir(SITE_ROOT + "\static\scripts")
+    os.chdir(SITE_ROOT + "/static/scripts")
     os.system("node face-detection.js logged.png")
     p = subprocess.Popen("node face-recognition.js", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()

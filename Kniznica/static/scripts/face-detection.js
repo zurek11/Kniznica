@@ -1,7 +1,7 @@
 const arg = process.argv.slice(2);
 const fr = require('face-recognition');
-const pathToDir = ('..\\..\\faceId\\' + arg.join("\\"));
-const pathToJson = ('..\\..\\faceId\\model.json');
+const pathToDir = ('../../faceId/' + arg.join("/"));
+const pathToJson = ('../../faceId/model.json');
 console.log(pathToDir);
 const image = fr.loadImage(pathToDir);
 const fs = require('fs');

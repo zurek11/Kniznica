@@ -53,5 +53,5 @@ def base_to_png(base64_string, name, image_name):
     filename = SITE_ROOT + "/faceId/" + name + "/" + image_name
     with open(filename, 'wb') as f:
         f.write(img_data)
-    os.chdir(SITE_ROOT + "\static\scripts")
+    os.chdir(SITE_ROOT + "/static/scripts")
     os.system("node face-detection.js " + name + " " + image_name)
