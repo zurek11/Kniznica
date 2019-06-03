@@ -25,7 +25,9 @@ SECRET_KEY = '(zh-6-+h)m8eprjn$e+(peovd0*t%e3ukvl%o06ag-kb59u((2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'diplomovka.adamzurek.tech'
+]
 
 
 # Application definition

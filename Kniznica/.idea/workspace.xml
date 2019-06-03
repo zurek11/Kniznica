@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbdb38fa-2b7f-4cfe-94c3-d596dd48a320" name="Default" comment="- Final changes implemented.">
+    <list default="true" id="bbdb38fa-2b7f-4cfe-94c3-d596dd48a320" name="Default" comment="- Implemented redirect from root to detska-kniznica.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kniznica/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kniznica/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faceId/logged.png" beforeDir="false" afterPath="$PROJECT_DIR$/faceId/logged.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scripts/face-detection.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/face-detection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kniznica/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kniznica/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,15 +55,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pipfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="19" selection-start-line="12" selection-end-line="12" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/video.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -107,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Kniznica/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -115,6 +103,15 @@
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -201,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/scripts/search.js" />
         <option value="$PROJECT_DIR$/video/urls.py" />
         <option value="$PROJECT_DIR$/songs/urls.py" />
         <option value="$PROJECT_DIR$/games/urls.py" />
@@ -252,6 +248,7 @@
         <option value="$PROJECT_DIR$/templates/parts/nav_bar.html" />
         <option value="$PROJECT_DIR$/static/scripts/face-detection.js" />
         <option value="$PROJECT_DIR$/Kniznica/urls.py" />
+        <option value="$PROJECT_DIR$/Kniznica/settings.py" />
       </list>
     </option>
   </component>
@@ -280,21 +277,6 @@
             <path>
               <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="books" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="games" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kniznica" type="462c0819:PsiDirectoryNode" />
-              <item name="homepage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kniznica" type="b2602c69:ProjectViewProjectNode" />
@@ -610,7 +592,7 @@
       <workItem from="1559418843903" duration="693000" />
       <workItem from="1559546474168" duration="333000" />
       <workItem from="1559546915378" duration="1117000" />
-      <workItem from="1559560666971" duration="1644000" />
+      <workItem from="1559560666971" duration="2315000" />
     </task>
     <task id="LOCAL-00001" summary="Bakalárka">
       <created>1524907500969</created>
@@ -654,11 +636,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559229019541</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- Implemented redirect from root to detska-kniznica.">
+      <created>1559579734170</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559579734170</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253908000" />
+    <option name="totallyTimeSpent" value="254579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -673,7 +662,7 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.3295325" />
@@ -792,7 +781,8 @@
     <MESSAGE value="- Implemented statistics.&#10;- Implemented book return." />
     <MESSAGE value="- Final changes implemented." />
     <MESSAGE value="Gunicorn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gunicorn" />
+    <MESSAGE value="- Implemented redirect from root to detska-kniznica." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Implemented redirect from root to detska-kniznica." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/songs/urls.py">
@@ -829,9 +819,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Kniznica/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1149,6 +1136,13 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kniznica/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
         </state>
       </provider>
     </entry>
