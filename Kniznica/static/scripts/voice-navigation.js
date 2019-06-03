@@ -10,13 +10,13 @@ $(function(){
     var songs = document.getElementById("songs");
 
     //VOICES
-    var login_audio = new Audio('\\static\\source\\audio\\Prihlasenie.mp3');
-    var register_audio = new Audio('\\static\\source\\audio\\Registracia.mp3');
-    var news_audio = new Audio('\\static\\source\\audio\\Spravicky.mp3');
-    var books_audio = new Audio('\\static\\source\\audio\\Knihy.mp3');
-    var games_audio = new Audio('\\static\\source\\audio\\Hry.mp3');
-    var fairytales_audio = new Audio('\\static\\source\\audio\\Rozpravky.mp3');
-    var songs_audio = new Audio('\\static\\source\\audio\\Pesnicky.mp3');
+    var login_audio = new Audio('/static/source/audio/Prihlasenie.mp3');
+    var register_audio = new Audio('/static/source/audio/Registracia.mp3');
+    var news_audio = new Audio('/static/source/audio/Spravicky.mp3');
+    var books_audio = new Audio('/static/source/audio/Knihy.mp3');
+    var games_audio = new Audio('/static/source/audio/Hry.mp3');
+    var fairytales_audio = new Audio('/static/source/audio/Rozpravky.mp3');
+    var songs_audio = new Audio('/static/source/audio/Pesnicky.mp3');
 
     //LISTENERS
     var loginPlayListener = function () {login_audio.play();};
